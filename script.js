@@ -49,3 +49,7 @@ function calculation(inp, op) {
     return divide(firstNumber, secondNumber);
   }
 }
+
+const numDisplay = document.querySelector(".num-display");
+
+const numOne = document.querySelector;
