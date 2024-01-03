@@ -4,14 +4,15 @@ body {
 
 .display-container {
   padding: 20px;
-  height: 20px;
+  height: 48px;
   width: auto;
   border-style: solid;
   border-radius: 12px;
   border-width: 4px;
   filter: drop-shadow(5px 5px black);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   background-color: #f1eae2;
+  text-align: right;
 }
 
 .num-display {
