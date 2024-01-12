@@ -12,15 +12,15 @@ function multi(a, b) {
 
 function divide(a, b) {
   if (a === 0 || b === 0) {
-    displayArr = [];
+    displayArr = ["ERROR!"];
     resultBuffer = [];
     currOp = "";
     currNum = [];
     currSecondNum = [];
-    numDisplay.textContent = displayArr;
+    numDisplay.textContent = displayArr.join("");
+    displayError();
   } else return a / b;
 }
-
 let firstNumber;
 let secondNumber;
 let operator;
@@ -86,73 +86,123 @@ const clearBtn = document.querySelector(".clear-btn");
 const equalsBtn = document.querySelector(".equals-btn");
 
 numOne.addEventListener("click", () => {
-  displayArr.push("1");
-  if (currOp === "") currNum.push("1");
-  else if (currOp != "") currSecondNum.push("1");
-  numDisplay.textContent = displayArr.join("");
+  if (displayArr.join("") === "ERROR!") {
+    displayArr = ["1"];
+    numDisplay.textContent = displayArr.join("");
+  } else {
+    displayArr.push("1");
+    if (currOp === "") currNum.push("1");
+    else if (currOp != "") currSecondNum.push("1");
+    numDisplay.textContent = displayArr.join("");
+  }
 });
 
 numTwo.addEventListener("click", () => {
-  displayArr.push("2");
-  if (currOp === "") currNum.push("2");
-  else if (currOp != "") currSecondNum.push("2");
-  numDisplay.textContent = displayArr.join("");
+  if (displayArr.join("") === "ERROR!") {
+    displayArr = ["2"];
+    numDisplay.textContent = displayArr.join("");
+  } else {
+    displayArr.push("2");
+    if (currOp === "") currNum.push("2");
+    else if (currOp != "") currSecondNum.push("2");
+    numDisplay.textContent = displayArr.join("");
+  }
 });
 
 numThree.addEventListener("click", () => {
-  displayArr.push("3");
-  if (currOp === "") currNum.push("3");
-  else if (currOp != "") currSecondNum.push("3");
-  numDisplay.textContent = displayArr.join("");
+  if (displayArr.join("") === "ERROR!") {
+    displayArr = ["3"];
+    numDisplay.textContent = displayArr.join("");
+  } else {
+    displayArr.push("3");
+    if (currOp === "") currNum.push("3");
+    else if (currOp != "") currSecondNum.push("3");
+    numDisplay.textContent = displayArr.join("");
+  }
 });
 
 numFour.addEventListener("click", () => {
-  displayArr.push("4");
-  if (currOp === "") currNum.push("4");
-  else if (currOp != "") currSecondNum.push("4");
-  numDisplay.textContent = displayArr.join("");
+  if (displayArr.join("") === "ERROR!") {
+    displayArr = ["3"];
+    numDisplay.textContent = displayArr.join("");
+  } else {
+    displayArr.push("4");
+    if (currOp === "") currNum.push("4");
+    else if (currOp != "") currSecondNum.push("4");
+    numDisplay.textContent = displayArr.join("");
+  }
 });
 
 numFive.addEventListener("click", () => {
-  displayArr.push("5");
-  if (currOp === "") currNum.push("5");
-  else if (currOp != "") currSecondNum.push("5");
-  numDisplay.textContent = displayArr.join("");
+  if (displayArr.join("") === "ERROR!") {
+    displayArr = ["5"];
+    numDisplay.textContent = displayArr.join("");
+  } else {
+    displayArr.push("5");
+    if (currOp === "") currNum.push("5");
+    else if (currOp != "") currSecondNum.push("5");
+    numDisplay.textContent = displayArr.join("");
+  }
 });
 
 numSix.addEventListener("click", () => {
-  displayArr.push("6");
-  if (currOp === "") currNum.push("6");
-  else if (currOp != "") currSecondNum.push("6");
-  numDisplay.textContent = displayArr.join("");
+  if (displayArr.join("") === "ERROR!") {
+    displayArr = ["6"];
+    numDisplay.textContent = displayArr.join("");
+  } else {
+    displayArr.push("6");
+    if (currOp === "") currNum.push("6");
+    else if (currOp != "") currSecondNum.push("6");
+    numDisplay.textContent = displayArr.join("");
+  }
 });
 
 numSeven.addEventListener("click", () => {
-  displayArr.push("7");
-  if (currOp === "") currNum.push("7");
-  else if (currOp != "") currSecondNum.push("7");
-  numDisplay.textContent = displayArr.join("");
+  if (displayArr.join("") === "ERROR!") {
+    displayArr = ["7"];
+    numDisplay.textContent = displayArr.join("");
+  } else {
+    displayArr.push("7");
+    if (currOp === "") currNum.push("7");
+    else if (currOp != "") currSecondNum.push("7");
+    numDisplay.textContent = displayArr.join("");
+  }
 });
 
 numEight.addEventListener("click", () => {
-  displayArr.push("8");
-  if (currOp === "") currNum.push("8");
-  else if (currOp != "") currSecondNum.push("8");
-  numDisplay.textContent = displayArr.join("");
+  if (displayArr.join("") === "ERROR!") {
+    displayArr = ["8"];
+    numDisplay.textContent = displayArr.join("");
+  } else {
+    displayArr.push("8");
+    if (currOp === "") currNum.push("8");
+    else if (currOp != "") currSecondNum.push("8");
+    numDisplay.textContent = displayArr.join("");
+  }
 });
 
 numNine.addEventListener("click", () => {
-  displayArr.push("9");
-  if (currOp === "") currNum.push("9");
-  else if (currOp != "") currSecondNum.push("9");
-  numDisplay.textContent = displayArr.join("");
+  if (displayArr.join("") === "ERROR!") {
+    displayArr = ["9"];
+    numDisplay.textContent = displayArr.join("");
+  } else {
+    displayArr.push("9");
+    if (currOp === "") currNum.push("9");
+    else if (currOp != "") currSecondNum.push("9");
+    numDisplay.textContent = displayArr.join("");
+  }
 });
 
 numZero.addEventListener("click", () => {
-  displayArr.push("0");
-  if (currOp === "") currNum.push("0");
-  else if (currOp != "") currSecondNum.push("9");
-  numDisplay.textContent = displayArr.join("");
+  if (displayArr.join("") === "ERROR!") {
+    displayArr = ["0"];
+    numDisplay.textContent = displayArr.join("");
+  } else {
+    displayArr.push("0");
+    if (currOp === "") currNum.push("0");
+    else if (currOp != "") currSecondNum.push("0");
+    numDisplay.textContent = displayArr.join("");
+  }
 });
 
 addBtn.addEventListener("click", () => {
@@ -280,16 +330,25 @@ divideBtn.addEventListener("click", () => {
 });
 
 equalsBtn.addEventListener("click", () => {
-  displayArr = [];
-  resultBuffer.push(currNum.join(""));
-  resultBuffer.push(currOp);
-  resultBuffer.push(currSecondNum.join(""));
-  currSecondNum = [];
-  currNum = [];
-  currNum.push(operation(resultBuffer.join("")));
-  console.log(resultBuffer.join(""));
-  console.log(currNum);
-  numDisplay.textContent = currNum;
+  if (displayArr.join("") === "0/0") {
+    displayArr = ["ERROR!"];
+    resultBuffer = [];
+    currOp = "";
+    currNum = [];
+    currSecondNum = [];
+    numDisplay.textContent = displayArr;
+  } else {
+    displayArr = [];
+    resultBuffer.push(currNum.join(""));
+    resultBuffer.push(currOp);
+    resultBuffer.push(currSecondNum.join(""));
+    currSecondNum = [];
+    currNum = [];
+    currNum.push(operation(resultBuffer.join("")));
+    console.log(resultBuffer.join(""));
+    console.log(currNum);
+    numDisplay.textContent = currNum;
+  }
 });
 
 clearBtn.addEventListener("click", () => {
