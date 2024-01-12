@@ -83,6 +83,7 @@ const minusBtn = document.querySelector(".minus-btn");
 const multiBtn = document.querySelector(".multi-btn");
 const divideBtn = document.querySelector(".divide-btn");
 const clearBtn = document.querySelector(".clear-btn");
+const periodBtn = document.querySelector(".period-btn");
 const equalsBtn = document.querySelector(".equals-btn");
 
 numOne.addEventListener("click", () => {
@@ -347,7 +348,27 @@ equalsBtn.addEventListener("click", () => {
     currNum.push(operation(resultBuffer.join("")));
     console.log(resultBuffer.join(""));
     console.log(currNum);
-    numDisplay.textContent = currNum;
+    numDisplay.textContent = Math.round(currNum * 100) / 100;
+  }
+});
+
+periodBtn.addEventListener("click", () => {
+  if (displayArr.join("") === "ERROR!") {
+    displayArr = ["."];
+    numDisplay.textContent = displayArr.join("");
+  } else {
+    if (currOp === "") {
+      if (currNum.indexOf(".") === -1) {
+        currNum.push(".");
+        displayArr.push(".");
+      }
+    } else if (currOp != "") {
+      if (currSecondNum.indexOf(".") === -1) {
+        currSecondNum.push(".");
+        displayArr.push(".");
+      }
+    }
+    numDisplay.textContent = displayArr.join("");
   }
 });
 
