@@ -27,8 +27,8 @@ function operation(inp) {
   if (inp.includes("-")) {
     return calculation(inp, "-");
   }
-  if (inp.includes("*")) {
-    return calculation(inp, "*");
+  if (inp.includes("x")) {
+    return calculation(inp, "x");
   }
   if (inp.includes("/")) {
     return calculation(inp, "/");
@@ -47,7 +47,7 @@ function calculation(inp, op) {
     return add(firstNumber, secondNumber);
   } else if (op === "-") {
     return sub(firstNumber, secondNumber);
-  } else if (op === "*") {
+  } else if (op === "x") {
     return multi(firstNumber, secondNumber);
   } else if (op === "/") {
     return divide(firstNumber, secondNumber);
@@ -190,8 +190,24 @@ minusBtn.addEventListener("click", () => {
   ) {
     console.error("error, can't have two signs next to each other");
   } else {
-    displayArr.push("-");
-    numDisplay.textContent = displayArr.join("");
+    if (currOp === "+" || currOp === "-" || currOp === "x" || currOp === "/") {
+      resultBuffer.push(currNum.join(""));
+      resultBuffer.push(currOp);
+      resultBuffer.push(currSecondNum.join(""));
+      currSecondNum = [];
+      currNum = [];
+      currNum.push(operation(resultBuffer.join("")));
+      console.log(resultBuffer.join(""));
+      console.log(currNum);
+      resultBuffer = [];
+      currOp = "-";
+      displayArr.push("-");
+      numDisplay.textContent = displayArr.join("");
+    } else {
+      currOp = "-";
+      displayArr.push("-");
+      numDisplay.textContent = displayArr.join("");
+    }
   }
 });
 
@@ -205,8 +221,24 @@ multiBtn.addEventListener("click", () => {
   ) {
     console.error("error, can't have two signs next to each other");
   } else {
-    displayArr.push("x");
-    numDisplay.textContent = displayArr.join("");
+    if (currOp === "+" || currOp === "-" || currOp === "x" || currOp === "/") {
+      resultBuffer.push(currNum.join(""));
+      resultBuffer.push(currOp);
+      resultBuffer.push(currSecondNum.join(""));
+      currSecondNum = [];
+      currNum = [];
+      currNum.push(operation(resultBuffer.join("")));
+      console.log(resultBuffer.join(""));
+      console.log(currNum);
+      resultBuffer = [];
+      currOp = "x";
+      displayArr.push("x");
+      numDisplay.textContent = displayArr.join("");
+    } else {
+      currOp = "x";
+      displayArr.push("x");
+      numDisplay.textContent = displayArr.join("");
+    }
   }
 });
 
@@ -220,12 +252,45 @@ divideBtn.addEventListener("click", () => {
   ) {
     console.error("error, can't have two signs next to each other");
   } else {
-    displayArr.push("/");
-    numDisplay.textContent = displayArr.join("");
+    if (currOp === "+" || currOp === "-" || currOp === "x" || currOp === "/") {
+      resultBuffer.push(currNum.join(""));
+      resultBuffer.push(currOp);
+      resultBuffer.push(currSecondNum.join(""));
+      currSecondNum = [];
+      currNum = [];
+      currNum.push(operation(resultBuffer.join("")));
+      console.log(resultBuffer.join(""));
+      console.log(currNum);
+      resultBuffer = [];
+      currOp = "/";
+      displayArr.push("/");
+      numDisplay.textContent = displayArr.join("");
+    } else {
+      currOp = "/";
+      displayArr.push("/");
+      numDisplay.textContent = displayArr.join("");
+    }
   }
+});
+
+equalsBtn.addEventListener("click", () => {
+  displayArr = [];
+  resultBuffer.push(currNum.join(""));
+  resultBuffer.push(currOp);
+  resultBuffer.push(currSecondNum.join(""));
+  currSecondNum = [];
+  currNum = [];
+  currNum.push(operation(resultBuffer.join("")));
+  console.log(resultBuffer.join(""));
+  console.log(currNum);
+  numDisplay.textContent = currNum;
 });
 
 clearBtn.addEventListener("click", () => {
   displayArr = [];
+  resultBuffer = [];
+  currOp = "";
+  currNum = [];
+  currSecondNum = [];
   numDisplay.textContent = displayArr;
 });
