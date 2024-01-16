@@ -87,6 +87,7 @@ const periodBtn = document.querySelector(".period-btn");
 const equalsBtn = document.querySelector(".equals-btn");
 
 numOne.addEventListener("click", () => {
+  checkDisplaySize();
   if (displayArr.join("") === "ERROR!") {
     displayArr = ["1"];
     numDisplay.textContent = displayArr.join("");
@@ -99,6 +100,7 @@ numOne.addEventListener("click", () => {
 });
 
 numTwo.addEventListener("click", () => {
+  checkDisplaySize();
   if (displayArr.join("") === "ERROR!") {
     displayArr = ["2"];
     numDisplay.textContent = displayArr.join("");
@@ -111,6 +113,7 @@ numTwo.addEventListener("click", () => {
 });
 
 numThree.addEventListener("click", () => {
+  checkDisplaySize();
   if (displayArr.join("") === "ERROR!") {
     displayArr = ["3"];
     numDisplay.textContent = displayArr.join("");
@@ -123,6 +126,7 @@ numThree.addEventListener("click", () => {
 });
 
 numFour.addEventListener("click", () => {
+  checkDisplaySize();
   if (displayArr.join("") === "ERROR!") {
     displayArr = ["3"];
     numDisplay.textContent = displayArr.join("");
@@ -135,6 +139,7 @@ numFour.addEventListener("click", () => {
 });
 
 numFive.addEventListener("click", () => {
+  checkDisplaySize();
   if (displayArr.join("") === "ERROR!") {
     displayArr = ["5"];
     numDisplay.textContent = displayArr.join("");
@@ -147,6 +152,7 @@ numFive.addEventListener("click", () => {
 });
 
 numSix.addEventListener("click", () => {
+  checkDisplaySize();
   if (displayArr.join("") === "ERROR!") {
     displayArr = ["6"];
     numDisplay.textContent = displayArr.join("");
@@ -159,6 +165,7 @@ numSix.addEventListener("click", () => {
 });
 
 numSeven.addEventListener("click", () => {
+  checkDisplaySize();
   if (displayArr.join("") === "ERROR!") {
     displayArr = ["7"];
     numDisplay.textContent = displayArr.join("");
@@ -171,6 +178,7 @@ numSeven.addEventListener("click", () => {
 });
 
 numEight.addEventListener("click", () => {
+  checkDisplaySize();
   if (displayArr.join("") === "ERROR!") {
     displayArr = ["8"];
     numDisplay.textContent = displayArr.join("");
@@ -183,6 +191,7 @@ numEight.addEventListener("click", () => {
 });
 
 numNine.addEventListener("click", () => {
+  checkDisplaySize();
   if (displayArr.join("") === "ERROR!") {
     displayArr = ["9"];
     numDisplay.textContent = displayArr.join("");
@@ -195,6 +204,7 @@ numNine.addEventListener("click", () => {
 });
 
 numZero.addEventListener("click", () => {
+  checkDisplaySize();
   if (displayArr.join("") === "ERROR!") {
     displayArr = ["0"];
     numDisplay.textContent = displayArr.join("");
@@ -207,6 +217,7 @@ numZero.addEventListener("click", () => {
 });
 
 addBtn.addEventListener("click", () => {
+  checkDisplaySize();
   let lastItem = displayArr[displayArr.length - 1];
   if (
     lastItem === "+" ||
@@ -238,6 +249,7 @@ addBtn.addEventListener("click", () => {
 });
 
 minusBtn.addEventListener("click", () => {
+  checkDisplaySize();
   let lastItem = displayArr[displayArr.length - 1];
   if (
     lastItem === "+" ||
@@ -269,6 +281,7 @@ minusBtn.addEventListener("click", () => {
 });
 
 multiBtn.addEventListener("click", () => {
+  checkDisplaySize();
   let lastItem = displayArr[displayArr.length - 1];
   if (
     lastItem === "+" ||
@@ -300,6 +313,7 @@ multiBtn.addEventListener("click", () => {
 });
 
 divideBtn.addEventListener("click", () => {
+  checkDisplaySize();
   let lastItem = displayArr[displayArr.length - 1];
   if (
     lastItem === "+" ||
@@ -331,6 +345,7 @@ divideBtn.addEventListener("click", () => {
 });
 
 equalsBtn.addEventListener("click", () => {
+  document.querySelector(".num-display").style.fontSize = "1.5rem";
   if (displayArr.join("") === "0/0") {
     displayArr = ["ERROR!"];
     resultBuffer = [];
@@ -353,6 +368,7 @@ equalsBtn.addEventListener("click", () => {
 });
 
 periodBtn.addEventListener("click", () => {
+  checkDisplaySize();
   if (displayArr.join("") === "ERROR!") {
     displayArr = ["."];
     numDisplay.textContent = displayArr.join("");
@@ -373,6 +389,7 @@ periodBtn.addEventListener("click", () => {
 });
 
 clearBtn.addEventListener("click", () => {
+  document.querySelector(".num-display").style.fontSize = "1.5rem";
   displayArr = [];
   resultBuffer = [];
   currOp = "";
@@ -380,3 +397,9 @@ clearBtn.addEventListener("click", () => {
   currSecondNum = [];
   numDisplay.textContent = displayArr;
 });
+
+function checkDisplaySize() {
+  if (displayArr.length > 14) {
+    document.querySelector(".num-display").style.fontSize = "1rem";
+  }
+}

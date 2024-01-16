@@ -5,7 +5,8 @@ body {
 .display-container {
   padding: 20px;
   height: 48px;
-  width: auto;
+  width: 200px;
+  font-size: 1rem;
   border-style: solid;
   border-radius: 12px;
   border-width: 4px;
